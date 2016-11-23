@@ -1,7 +1,6 @@
 # react-study
 start react code
 
-
 ### 注意点
 
 * JSX 不是 HTML
@@ -46,3 +45,7 @@ ReactDOM.render(
 );
 ```
 
+### 生命周期
+![img](./images/initialRender.png)
+![stateChange](./images/stateChange.png)
+![propChange](./images/propChange.png)
