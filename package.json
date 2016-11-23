@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/yyjazsf/react-study#readme",
   "dependencies": {
+    "@types/react": "^0.14.50",
+    "@types/react-dom": "^0.14.19",
     "babel-core": "^6.18.2",
     "babel-standalone": "^6.19.0",
     "react": "^15.4.0",
