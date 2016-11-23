@@ -5,6 +5,7 @@ start react code
 ### 注意点
 
 * JSX 不是 HTML
+* 用 ES6 的类来定义组件，那么事件处理器中 this 的值就是 undefined，除非你自己显式绑定它`onClick={this.increase.bind(this)}`
 * 注释
 ```jsx
 ReactDOM.render(
