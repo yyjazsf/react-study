@@ -1,7 +1,47 @@
 /**
- * http://www.zcfy.cc/article/the-component-lifecycle-1545.html
- * 
+ * 路由
  */
+let css = ` body {
+  background-color: #FFCC00;
+  padding: 20px;
+  margin: 0;
+}
+h1, h2, p, ul, li {
+  font-family: Helvetica, Arial, sans-serif;
+}
+ul.header li {
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+}
+ul.header {
+  background-color: #111;
+  padding: 0;
+}
+ul.header li a {
+  color: #FFF;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 20px;
+  display: inline-block;
+}
+.content {
+  background-color: #FFF;
+  padding: 20px;
+}
+.content h2 {
+  padding: 0;
+  margin: 0;
+}
+.content li {
+  margin-bottom: 10px;
+}
+.active {
+  background-color: #0099FF;
+}`;
+let style = document.createElement('style')
+style.innerText = css;
+document.getElementsByTagName('head')[0].appendChild(style);
 
 var { Router,
       Route,
