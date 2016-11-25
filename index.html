@@ -6,6 +6,9 @@
   <script src="node_modules/react/dist/react.js"></script>
   <script src="node_modules/react-dom/dist/react-dom.js"></script>
   <script src="node_modules/babel-standalone/babel.js"></script>
+  <script src="node_modules/react-router/umd/ReactRouter.js"></script>
+  <script src="node_modules/history/umd/history.js"></script>
+  <!--<script src="https://unpkg.com/react-router@4.0.0-2/umd/react-router.min.js"></script>-->
   <!--data-presets="es2015,stage-2"-->
   <!--<script type="text/babel" src="js/2.jsx"></script>-->
   <!--<script type="text/babel" src="js/3.jsx"></script>-->
@@ -16,7 +19,48 @@
   <!--<script type="text/babel" src="js/8.jsx"></script>-->
   <!--<script type="text/babel" src="js/9.jsx"></script>-->
   <!--<script type="text/babel" src="js/10.jsx"></script>-->
-  <script type="text/babel" src="js/11.jsx"></script>
+  <!--<script type="text/babel" src="js/11.jsx"></script>-->
+  <script type="text/babel" src="js/12.jsx"></script>
+  <style>
+    body {
+  background-color: #FFCC00;
+  padding: 20px;
+  margin: 0;
+}
+h1, h2, p, ul, li {
+  font-family: Helvetica, Arial, sans-serif;
+}
+ul.header li {
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+}
+ul.header {
+  background-color: #111;
+  padding: 0;
+}
+ul.header li a {
+  color: #FFF;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 20px;
+  display: inline-block;
+}
+.content {
+  background-color: #FFF;
+  padding: 20px;
+}
+.content h2 {
+  padding: 0;
+  margin: 0;
+}
+.content li {
+  margin-bottom: 10px;
+}
+.active {
+  background-color: #0099FF;
+}
+  </style>
   <style>
     #main{
       padding: 50px;
