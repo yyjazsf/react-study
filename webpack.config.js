@@ -1,12 +1,19 @@
-var webpack = require("webpack");
-var path = require("path");
+const webpack = require("webpack");
+const path = require("path");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-var DEV = path.resolve(__dirname, "src");
-var OUTPUT = path.resolve(__dirname, "dist");
+const DEV = path.resolve(__dirname, "src");
+const OUTPUT = path.resolve(__dirname, "dist");
+
+const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
+  template: `${__dirname}/index.html`,
+  filename: 'index.html',
+  inject: 'body',
+});
 
 var config = {
   entry: [
-    DEV + "/index.jsx"
+    "./src/index.js"
   ],
   output: {
     path: OUTPUT,
@@ -16,6 +23,7 @@ var config = {
     rules:[
       {
         test: /\.jsx?$/,
+        exclude: /node_modules/,
         include: [
           DEV
         ],
@@ -23,7 +31,12 @@ var config = {
         loader: "babel-loader"
       }
     ]
-  }
+  },
+  devServer: {
+    inline: true,
+    port: 8080,
+  },
+  plugins: [HTMLWebpackPluginConfig],
 };
 
 module.exports = config;
