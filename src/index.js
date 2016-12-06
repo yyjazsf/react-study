@@ -1,22 +1,42 @@
-import React from "react";
+/**
+ *
+ */
+import React, {Component} from "react";
 import ReactDOM from "react-dom";
 
-var HelloWorld = React.createClass({
-  render: function() {
+class HelloWorld extends Component {
+  constructor() {
+    super();
+    this.onBtn = this.onBtn.bind(this);
+  }
+
+  onBtn() {
+    alert(this.props.greetTarget);
+  }
+
+  render() {
     return (
-      <p>Hello, {this.props.greetTarget}!</p>
+      <p style={{color: '#333', fontSize: '30px'}} onClick={this.onBtn}>Hello, {this.props.greetTarget}!</p>
     );
   }
-});
+}
+
+const lists = ['JavaScript', 'koa', 'Node', 'express'];
 
 ReactDOM.render(
   <div>
-    <HelloWorld greetTarget="Batman"/>
-    <HelloWorld greetTarget="Iron Man"/>
-    <HelloWorld greetTarget="Nicolas Cage"/>
-    <HelloWorld greetTarget="Mega Man"/>
-    <HelloWorld greetTarget="Bono"/>
-    <HelloWorld greetTarget="Catwoman"/>
+    {
+      lists.map((result, index) => {
+        return (
+          /**
+           * 多行注释
+           */
+          <HelloWorld key={index} greetTarget={result}/>// 单行注解
+        )
+      })
+    }
+
+    {/*<h2 dangerouslySetInnerHTML={{__html: '<h1>Hello World!!</h1>'}}></h2>*/}
   </div>,
   document.querySelector("#main")
 );

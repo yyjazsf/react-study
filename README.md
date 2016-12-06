@@ -1,6 +1,9 @@
 # react-study
 start react code
 
+### 教程
+[从零开始学 ReactJS（ReactJS 101）](https://github.com/carlleton/reactjs101)
+
 ### 注意点
 
 * JSX 不是 HTML
