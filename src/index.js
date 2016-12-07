@@ -4,39 +4,18 @@
 import React, {Component} from "react";
 import ReactDOM from "react-dom";
 
-class HelloWorld extends Component {
-  constructor() {
-    super();
-    this.onBtn = this.onBtn.bind(this);
-  }
-
-  onBtn() {
-    alert(this.props.greetTarget);
-  }
-
-  render() {
-    return (
-      <p style={{color: '#333', fontSize: '30px'}} onClick={this.onBtn}>Hello, {this.props.greetTarget}!</p>
-    );
-  }
-}
-
-const lists = ['JavaScript', 'koa', 'Node', 'express'];
+// import HelloMessage from './FunctionalComponent'; // Functional Component
+// import UseJs from './usejs';// jsx 里面使用原生js  map
+// import Timer from './states';// 文件名不能是关键字，比如state
+import TodoApp from './todoList';
 
 ReactDOM.render(
   <div>
-    {
-      lists.map((result, index) => {
-        return (
-          /**
-           * 多行注释
-           */
-          <HelloWorld key={index} greetTarget={result}/>// 单行注解
-        )
-      })
-    }
+    {/*<HelloMessage></HelloMessage>*/}
+    {/*<UseJs></UseJs>*/}
+    {/*<Timer></Timer>*/}
+    <TodoApp></TodoApp>
 
-    {/*<h2 dangerouslySetInnerHTML={{__html: '<h1>Hello World!!</h1>'}}></h2>*/}
   </div>,
   document.querySelector("#main")
 );

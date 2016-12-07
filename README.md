@@ -49,6 +49,7 @@ ReactDOM.render(
 ```
 
 ### 生命周期
+![lifecycle](./images/react-lifecycle.png)
 ![img](./images/initialRender.png)
 ![stateChange](./images/stateChange.png)
 ![propChange](./images/propChange.png)
