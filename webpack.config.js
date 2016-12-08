@@ -26,15 +26,13 @@ const config = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         include: [DEV],
-        // apply these rule even if rules are overridden (advanced option)
-        loader: 'eslint-loader',
+        use: ['eslint-loader'],
       },
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         include: [DEV],
-        // apply these rule even if rules are overridden (advanced option)
-        loader: 'babel-loader',
+        use: ['babel-loader'],
       },
     ],
   },
@@ -47,8 +45,8 @@ const config = {
     new webpack.LoaderOptionsPlugin({
       options: {
         tslint: {
-          emitErrors: false,
-          failOnHint: false,
+          emitErrors: true,
+          failOnHint: true,
         },
       },
     }),
