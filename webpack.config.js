@@ -22,11 +22,17 @@ var config = {
   module:{
     rules:[
       {
+        enforce:'pre',
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        include: [
-          DEV
-        ],
+        include: [DEV],
+        // apply these rule even if rules are overridden (advanced option)
+        loader: "eslint-loader"
+      },
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        include: [DEV],
         // apply these rule even if rules are overridden (advanced option)
         loader: "babel-loader"
       }
@@ -36,7 +42,17 @@ var config = {
     inline: true,
     port: 8080,
   },
-  plugins: [HTMLWebpackPluginConfig],
+  plugins: [
+    HTMLWebpackPluginConfig,
+    new webpack.LoaderOptionsPlugin({
+        options: {
+            tslint: {
+                emitErrors: true,
+                failOnHint: true
+            }
+        }
+    })
+  ],
 };
 
 module.exports = config;
