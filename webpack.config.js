@@ -1,9 +1,9 @@
-const webpack = require("webpack");
-const path = require("path");
+const webpack = require('webpack');
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const DEV = path.resolve(__dirname, "src");
-const OUTPUT = path.resolve(__dirname, "dist");
+const DEV = path.resolve(__dirname, 'src');
+const OUTPUT = path.resolve(__dirname, 'dist');
 
 const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
   template: `${__dirname}/index.html`,
@@ -11,32 +11,32 @@ const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
   inject: 'body',
 });
 
-var config = {
+const config = {
   entry: [
-    "./src/index.js"
+    './src/index.js',
   ],
   output: {
     path: OUTPUT,
-    filename: "[name].js"
+    filename: '[name].js',
   },
-  module:{
-    rules:[
+  module: {
+    rules: [
       {
-        enforce:'pre',
+        enforce: 'pre',
         test: /\.jsx?$/,
         exclude: /node_modules/,
         include: [DEV],
         // apply these rule even if rules are overridden (advanced option)
-        loader: "eslint-loader"
+        loader: 'eslint-loader',
       },
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         include: [DEV],
         // apply these rule even if rules are overridden (advanced option)
-        loader: "babel-loader"
-      }
-    ]
+        loader: 'babel-loader',
+      },
+    ],
   },
   devServer: {
     inline: true,
@@ -45,13 +45,13 @@ var config = {
   plugins: [
     HTMLWebpackPluginConfig,
     new webpack.LoaderOptionsPlugin({
-        options: {
-            tslint: {
-                emitErrors: true,
-                failOnHint: true
-            }
-        }
-    })
+      options: {
+        tslint: {
+          emitErrors: false,
+          failOnHint: false,
+        },
+      },
+    }),
   ],
 };
 
