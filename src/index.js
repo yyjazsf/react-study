@@ -11,6 +11,7 @@ import Repos from './Repos';
 import About from './About';
 import User from './User';
 import Contacts from './Contacts';
+import ImmutableDemo from './Immutable';
 
 ReactDOM.render(
   <Router history={hashHistory}>
@@ -20,6 +21,7 @@ ReactDOM.render(
       <Route path="/about" component={About} />
       <Route path="/user" component={User} />
       <Route path="/contacts" component={Contacts} />
+      <Route path="/immutable" component={ImmutableDemo} />
     </Route>
   </Router>,
   document.querySelector('#main'));
