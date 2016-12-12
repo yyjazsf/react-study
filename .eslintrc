@@ -15,11 +15,13 @@
       {
         "forbid": [
           // "object", allow object
-          "any",
-          "array"
+          "any"
+          // "array"
         ]
       }
-    ]
+    ],
+    "class-methods-use-this": 0,
+    "quotes": 0
   },
   "env": {
     "browser": true
