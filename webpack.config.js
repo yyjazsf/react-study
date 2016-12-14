@@ -21,13 +21,13 @@ const config = {
   },
   module: {
     rules: [
-      {
-        enforce: 'pre',
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        include: [DEV],
-        use: ['eslint-loader'],
-      },
+      // {
+      //   enforce: 'pre',
+      //   test: /\.jsx?$/,
+      //   exclude: /node_modules/,
+      //   include: [DEV],
+      //   use: ['eslint-loader'],
+      // },
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,

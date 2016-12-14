@@ -1,18 +1,10 @@
-/**
- * Created by yyj on 12/12/2016.
- */
-import AppDispatcher from '../dispatcher/AppDispatcher';
-import TodoConstants from '../constants/TodoConstants';
+import { createAction } from 'redux-actions';
+// import {
+//   CREATE_TODO,
+//   DELETE_TODO,
+//   CHANGE_TEXT,
+// } from '../constants/actionTypes';
 
-const TodoActions = {
-  addTodo(text) {
-    AppDispatcher.handleAction({
-      type: TodoConstants.ADD_TODO,
-      payload: {
-        text,
-      },
-    });
-  },
-};
-
-export default TodoActions;
+export const createTodo = createAction('CREATE_TODO');
+export const deleteTodo = createAction('DELETE_TODO');
+export const changeText = createAction('CHANGE_TEXT');

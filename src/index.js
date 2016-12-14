@@ -1,25 +1,12 @@
-/**
- *
- */
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import Main from './components/Main';
+import store from './store';
 
-import TodoHeader from './components/TodoHeader';
-import TodoList from './components/TodoList';
-
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-  render() {
-    return (
-      <div>
-        <TodoHeader />
-        <TodoList />
-      </div>
-    );
-  }
-}
-
-ReactDOM.render(<App />, document.querySelector('#main'));
+ReactDOM.render(
+  <Provider store={store}>
+    <Main />
+  </Provider>,
+  document.getElementById('main'),
+);
