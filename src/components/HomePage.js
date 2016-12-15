@@ -13,7 +13,7 @@ const HomePage = ({
   console.log(userId);
 
   return (
-    <form onSubmit={onSubmitUserId}>
+    <form>
       <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input
           className="mdl-textfield__input"
@@ -26,18 +26,18 @@ const HomePage = ({
         <span className="mdl-textfield__error">userId error!</span>
       </div>
       <div>
-        <h1><Link
+        <Link
           to={{
             pathname: 'result',
             query: { userId },
           }}
-        >{userId}</Link></h1>
-        <button
+        ><button
+          onClick={onSubmitUserId}
           type="submit"
           className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
         >
-          submit
-        </button>
+          view { userId || 'userId' }
+        </button></Link>
       </div>
     </form>
   );
