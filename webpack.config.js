@@ -16,6 +16,8 @@ const config = {
   // the entry and module.rules.loader option
   // is resolved relative to this directory
   context: __dirname, // string (absolute path!)
+
+  // https://webpack.js.org/guides/code-splitting/
   entry: [
     './src/index.js',
   ],
@@ -64,8 +66,9 @@ const config = {
   // changes chunk loading behavior and available modules
   target: 'web',
   devServer: {
-    inline: true,
+    host: '0.0.0.0', // binds to all hosts
     port: 8080,
+    inline: true,
   },
   plugins: [
     HTMLWebpackPluginConfig,
