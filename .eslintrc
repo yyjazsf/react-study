@@ -10,20 +10,7 @@
         ]
       }
     ],
-    "react/forbid-prop-types": [
-      1,
-      {
-        "forbid": [
-          // "object", allow object
-          "any"
-          // "array"
-        ]
-      }
-    ],
-    "import/prefer-default-export": [
-      0
-    ],
-    "class-methods-use-this": 0,
+    "react/forbid-prop-types":[0],
     "quotes": 0
   },
   "env": {

@@ -1,9 +1,14 @@
-import { combineReducers } from 'redux-immutable';
-// import ui from './ui/uiReducers';
-import todo from './data/todoReducers';// import routes from './routes';
+/**
+ * Created by yyj on 14/12/2016.
+ */
 
-const rootReducer = combineReducers({
-  todo,
+import { combineReducers } from 'redux-immutable';
+import ui from './uiReducers';
+import github from './githubReducers';
+
+const rootReducers = combineReducers({
+  ui,
+  github,
 });
 
-export default rootReducer;
+export default rootReducers;
