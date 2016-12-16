@@ -19,21 +19,22 @@ const config = {
 
   // https://webpack.js.org/guides/code-splitting/
   entry: [
-    './src/index.js',
+    './src/client/index.js',
   ],
   output: {
     path: OUTPUT,
     filename: 'app.js', // [name].js
+    publicPath: '/static/',
   },
   module: {
     rules: [
-      // {
-      //   enforce: 'pre',
-      //   test: /\.jsx?$/,
-      //   exclude: /node_modules/,
-      //   include: [DEV],
-      //   use: ['eslint-loader'],
-      // },
+      {
+        enforce: 'pre',
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        include: [DEV],
+        use: ['eslint-loader'],
+      },
       {
         test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
         use: {
@@ -65,13 +66,14 @@ const config = {
   // the environment in which the bundle should run
   // changes chunk loading behavior and available modules
   target: 'web',
-  devServer: {
-    host: '0.0.0.0', // binds to all hosts
-    port: 8080,
-    inline: true,
-  },
+  // devServer: {
+  //   host: '0.0.0.0', // binds to all hosts
+  //   port: 8081,
+  //   inline: true,
+  //   contentBase: 'dist',
+  // },
   plugins: [
-    HTMLWebpackPluginConfig,
+    // HTMLWebpackPluginConfig,
     // new webpack.LoaderOptionsPlugin({
     //   options: {
     //     tslint: {
