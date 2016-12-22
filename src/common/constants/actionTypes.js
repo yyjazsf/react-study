@@ -2,8 +2,27 @@
  * Created by yyj on 16/12/2016.
  */
 
-const actionTypes = {
-  INCREMENT_COUNT: 'INCREMENT_COUNT',
-  DECREMENT_COUNT: 'DECREMENT_COUNT',
+export const AUTH = {
+  START: 'AUTH_START',
+  COMPLETE: 'AUTH_COMPLETE',
+  ERROR: 'AUTH_ERROR',
+  LOGOUT: 'START_LOGOUT',
+  CHECK_AUTH: 'CHECK_AUTH',
+  //
+  SET_USER: 'SET_USER',
+
 };
-export default actionTypes;
+
+export const UI = {
+  SHOW_SPINNER: 'SHOW_SPINNER',
+  HIDE_SPINNER: 'HIDE_SPINNER',
+  SET_UI: 'SET_UI',
+};
+
+export const RECIPES = {
+  GET_RECIPES: 'GET_RECIPES',
+  SET_RECIPE: 'SET_RECIPE',
+  ADD_RECIPE: 'ADD_RECIPE',
+  UPDATE_RECIPE: 'UPDATE_RECIPE',
+  DELETE_RECIPE: 'DELETE_RECIPE',
+};

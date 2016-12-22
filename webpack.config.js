@@ -1,15 +1,8 @@
 const webpack = require('webpack');
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const DEV = path.resolve(__dirname, 'src');
 const OUTPUT = path.resolve(__dirname, 'dist');
-
-const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
-  template: `${__dirname}/index.html`,
-  filename: 'index.html',
-  inject: 'body',
-});
 
 const config = {
   // the home directory for webpack
@@ -28,13 +21,13 @@ const config = {
   },
   module: {
     rules: [
-      {
-        enforce: 'pre',
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        include: [DEV],
-        use: ['eslint-loader'],
-      },
+      // {
+      //   enforce: 'pre',
+      //   test: /\.jsx?$/,
+      //   exclude: /node_modules/,
+      //   include: [DEV],
+      //   use: ['eslint-loader'],
+      // },
       {
         test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
         use: {
@@ -73,7 +66,8 @@ const config = {
   //   contentBase: 'dist',
   // },
   plugins: [
-    // HTMLWebpackPluginConfig,
+    // new webpack.optimize.OccurrenceOrderPlugin(),
+    // new webpack.HotModuleReplacementPlugin(),
     // new webpack.LoaderOptionsPlugin({
     //   options: {
     //     tslint: {

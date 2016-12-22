@@ -1,12 +1,14 @@
 /**
  * Created by yyj on 15/12/2016.
  */
-
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
+import Immutable from 'immutable';
 import rootReducer from '../reducers';
 
-function configStore(preloadedState) {
+const initialState = Immutable.Map();
+
+function configStore(preloadedState = initialState) {
   const composeEnhancers =
           process.env.NODE_ENV !== 'production' &&
           typeof window === 'object' &&
@@ -22,13 +24,6 @@ function configStore(preloadedState) {
       applyMiddleware(thunk),
     ),
   );
-
-  // if (module.hot) {
-  //   module.hot.accept('../reducers', () => {
-  //     const nextRootReducer = rootReducer;
-  //     store.replaceReducer(nextRootReducer);
-  //   });
-  // }
 
   return store;
 }

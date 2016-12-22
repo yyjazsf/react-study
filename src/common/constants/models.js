@@ -3,8 +3,24 @@
  */
 import { fromJS } from 'immutable';
 
-const CounterState = fromJS({
-  count: 0,
+export const UiState = fromJS({
+  spinnerVisible: false,
+  isEdit: false,
 });
 
-export default CounterState;
+export const RecipeState = fromJS({
+  recipes: [],
+  recipe: {
+    id: '',
+    name: '',
+    description: '',
+    imagePath: '',
+  },
+});
+
+export const UserState = fromJS({
+  userName: '',
+  email: '',
+  password: '',
+  isAuth: false,
+});

@@ -5,5 +5,6 @@ start react code
 [从零开始学 ReactJS（ReactJS 101）](https://github.com/carlleton/reactjs101)
 [webpack2](https://github.com/cssmagic/blog/issues/58)
 
-### 
+### todo
+* 编辑完跳转到  /，但是莫名的调回了 /edit (无参数)
 
