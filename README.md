@@ -1,10 +1,14 @@
 # react-study
 start react code
 
-### 教程
+## 教程
 [从零开始学 ReactJS（ReactJS 101）](https://github.com/carlleton/reactjs101)
 [webpack2](https://github.com/cssmagic/blog/issues/58)
 
-### todo
-* 编辑完跳转到  /，但是莫名的调回了 /edit (无参数)
+## changeLog
+
+### dva@2 2017-10-17
+
+### long long ago...
+
 

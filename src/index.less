@@ -1,0 +1,80 @@
+:global(#root),
+body,
+html {
+  height: 100%;
+}
+
+body {
+  font-size: 12px;
+  color: #333;
+}
+img {
+  user-select: none;
+}
+
+textarea {
+  resize: none;
+}
+
+:global {
+  .hide {
+    display: none!important;
+  }
+  .center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .text-left {
+    text-align: left;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .text-right {
+    text-align: right;
+  }
+}
+
+// antd
+:global{
+  // 弹框垂直居中
+  .vertical-center-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .ant-modal {
+      top: 0;
+
+      .ant-modal-body {
+        max-height: 80vh;
+        overflow-y: auto;
+      }
+    }
+  }
+}
+
+// 浏览器 :: 样式
+:global {
+  :focus {
+    outline: none;
+  }
+
+  ::selection {
+    background: #108ee9;
+    color: #fff;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #e6e6e6;
+  }
+}
