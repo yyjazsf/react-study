@@ -7,7 +7,8 @@ start react code
 
 ## changeLog
 
-### dva@2 2017-10-17
+### 2017-10-17
+* use dva@2 
 
 ### long long ago...
 
