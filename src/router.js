@@ -5,6 +5,9 @@ import dynamic from 'dva/dynamic'
 function RouterConfig({ history, app }) {
   const Home = dynamic({
     app,
+    models: () => [
+      import('./models/home'),
+    ],
     component: () => import('./routes/home'),
   })
 
