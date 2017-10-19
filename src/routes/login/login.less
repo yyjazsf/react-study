@@ -1,6 +1,56 @@
 
 .container{
-  width: 500px;
-  margin-left: auto;
-  margin-right: auto;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/login_bg.jpg');
+  background-size: cover;
+  background-position: 50%;
+}
+
+.login{
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  right: 100px;
+  margin: -160px 0 0 0;
+  width: 320px;
+  padding: 36px;
+  box-shadow: 0 0 100px rgba(0,0,0,.08);
+
+  button {
+    width: 100%;
+  }
+
+  p {
+    color: rgb(204, 204, 204);
+    text-align: center;
+    margin-top: 16px;
+
+    span {
+      &:first-child {
+        margin-right: 16px;
+      }
+    }
+  }
+}
+
+.logo {
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  cursor: pointer;
+  margin-bottom: 24px;
+
+  img {
+    width: 40px;
+    margin-right: 8px;
+  }
+
+  span {
+    vertical-align: text-bottom;
+    font-size: 16px;
+    text-transform: uppercase;
+    display: inline-block;
+  }
 }

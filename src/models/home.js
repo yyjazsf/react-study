@@ -5,11 +5,11 @@ export default {
   state: {},
 
   subscriptions: {
-    setup({ dispatch, history }) {
-      history.listen((location) => {
-        console.log(1, location)
-      })
-    },
+    // setup({ dispatch, history }) {
+    //   history.listen((location) => {
+    //     console.log(1, location)
+    //   })
+    // },
   },
 
   effects: {

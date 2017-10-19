@@ -5,7 +5,9 @@
   "scripts": {
     "start": "roadhog server",
     "build": "roadhog build",
-    "lint": "eslint --ext .js src test"
+    "lint": "eslint --ext .js src",
+    "build:dll": "roadhog buildDll",
+    "build:new": "node version && roadhog build"
   },
   "repository": {
     "type": "git",
@@ -20,9 +22,11 @@
   "dependencies": {
     "antd": "^2.13.6",
     "axios": "^0.16.2",
+    "babel-polyfill": "^6.26.0",
     "babel-runtime": "^6.26.0",
     "dva": "^2.0.3",
     "dva-loading": "^1.0.2",
+    "dva-model-extend": "^0.1.2",
     "history": "^4.7.2",
     "lodash": "^4.17.4",
     "nprogress": "^0.2.0",
@@ -35,15 +39,14 @@
     "babel-eslint": "^8.0.1",
     "babel-plugin-dva-hmr": "^0.3.2",
     "babel-plugin-import": "^1.1.0",
-    "babel-plugin-module-resolver": "^2.7.1",
     "babel-plugin-transform-runtime": "^6.23.0",
     "eslint": "^4.9.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.4.0",
-    "expect": "^1.20.2",
-    "husky": "^0.13.0",
+    "expect": "^21.2.1",
+    "husky": "^0.14.3",
     "redbox-react": "^1.5.0",
     "roadhog": "^1.2.2"
   }
