@@ -48,7 +48,7 @@ class Login extends Component {
         getFieldDecorator,
       },
     } = this.props
-    const { from } = location.state || { from: { pathname: '/index' } }
+    const { from } = location.state || { from: { pathname: '/app/index' } }
     if (auth.login) {
       return <Redirect to={from} />
     }
