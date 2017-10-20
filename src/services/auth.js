@@ -7,6 +7,8 @@ export function login(data) {
       setTimeout(() => {
         resolve({
           username: data.username,
+          meail: 'admin@yingyj.com',
+          token: '123',
         })
       }, 1000)
     } else {
@@ -27,7 +29,7 @@ export function logout(data) {
   })
 }
 
-export function registe(data) {
+export function register(data) {
   return request({
     url: 'auth/registe',
     method: 'post',

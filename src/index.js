@@ -1,5 +1,5 @@
 import dva from 'dva'
-import createHistory from 'history/createBrowserHistory'
+import { createHashHistory } from 'history'
 import createLoading from 'dva-loading'
 import { message } from 'antd'
 import 'babel-polyfill'
@@ -13,9 +13,10 @@ const app = dva({
   ...createLoading({
     effects: true,
   }),
-  history: createHistory(),
+  history: createHashHistory(),
   onError(e) {
     message.error(e.message, ERROR_MSG_DURATION)
+    // log error to server
   },
 })
 

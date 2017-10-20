@@ -28,6 +28,8 @@
       }
     ],
     "class-methods-use-this":1,
+    "react/no-array-index-key": 1,
+    "react/no-unescaped-entities": 0,
     "jsx-a11y/anchor-is-valid":0,
     "import/prefer-default-export":0,
     "react/prefer-stateless-function":0,

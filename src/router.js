@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import dynamic from 'dva/dynamic'
 
 import App from './routes/app'
-import AuthorizedRoute from './components/authorizedRoute'
+import ManinLayout from './components/layout'
 
 const { ConnectedRouter } = routerRedux
 
@@ -17,14 +17,6 @@ const registerModel = (app, model) => {
 function RouterConfig({ history, app }) {
   registerModel(app, require('./models/auth'))
 
-  const Home = dynamic({
-    app,
-    models: () => [
-      import('./models/home'),
-    ],
-    component: () => import('./routes/home'),
-  })
-
   const error = dynamic({
     app,
     component: () => import('./routes/error'),
@@ -35,12 +27,43 @@ function RouterConfig({ history, app }) {
     component: () => import('./routes/login'),
   })
 
+  const routes = [
+    {
+      path: '/index',
+      models: () => [
+        import('./models/home'),
+      ],
+      component: () => import('./routes/home'),
+    },
+    {
+      path: '/user',
+      models: () => [
+        import('./models/user'),
+      ],
+      component: () => import('./routes/user'),
+    },
+  ]
+
   return (
     <ConnectedRouter history={history}>
       <App>
         <Switch>
           <Route exact path="/" component={Login} />
-          <Route exact path="/app" component={Home} />
+          <ManinLayout>
+            {
+              routes.map(({ path, ...dynamics }, key) => (
+                <Route
+                  key={key}
+                  exact
+                  path={path}
+                  component={dynamic({
+                    app,
+                    ...dynamics, // (models and) component
+                  })}
+                />
+              ))
+            }
+          </ManinLayout>
           <Route component={error} />
         </Switch>
       </App>

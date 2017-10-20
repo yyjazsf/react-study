@@ -1,7 +1,6 @@
 
 import { message } from 'antd'
 import modelExtend from 'dva-model-extend'
-
 import { model } from './common'
 import * as authServices from '../services/auth'
 
@@ -11,12 +10,10 @@ export default modelExtend(model, {
     login: false,
   },
   subscriptions: {
-    // if has login,check user token
     // setup({ dispatch, history }) {
     //   history.listen((location) => {
-    //     if (location.pathname === '/login') {
-    //       const query = queryString.parse(location.search)
-    //       dispatch({ type: 'fetch', payload: query })
+    //     if (location.pathname === '/') {
+    //       // do something
     //     }
     //   })
     // },
@@ -32,14 +29,20 @@ export default modelExtend(model, {
             login: true,
           },
         })
+        window.localStorage.setItem('user', JSON.stringify(data))
         yield put({
           type: 'app/updateState',
           payload: {
             user: data,
             menu: [
               {
-                key: 1,
-                path: '/',
+                key: 1, // id
+                path: '/index',
+                title: '主页',
+              },
+              {
+                key: 2,
+                path: '/user',
                 title: '主页',
               },
             ],
@@ -49,6 +52,39 @@ export default modelExtend(model, {
         // yield put(routerRedux.push('/app'))
       } else {
         message.error('账号或密码错误')
+      }
+    },
+
+    *register({ payload }, { call, put }) {
+      const data = yield call(authServices.login, payload)
+      if (payload.username === 'root' && payload.password === 'root') {
+        yield put({
+          type: 'updateState',
+          payload: {
+            login: true,
+          },
+        })
+        window.localStorage.setItem('user', JSON.stringify(data))
+        yield put({
+          type: 'app/updateState',
+          payload: {
+            user: data,
+            menu: [
+              {
+                key: 1, // id
+                path: '/index',
+                title: '主页',
+              },
+              {
+                key: 2,
+                path: '/user',
+                title: '主页',
+              },
+            ],
+          },
+        })
+        message.success('注册成功', 1)
+        // yield put(routerRedux.push('/app'))
       }
     },
   },
