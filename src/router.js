@@ -34,9 +34,14 @@ function RouterConfig({ history, app }) {
         import('./models/home'),
       ],
       component: () => import('./routes/home'),
-    },
-    {
+    }, {
       path: '/user',
+      models: () => [
+        import('./models/user'),
+      ],
+      component: () => import('./routes/user'),
+    }, {
+      path: '/user/:username',
       models: () => [
         import('./models/user'),
       ],
