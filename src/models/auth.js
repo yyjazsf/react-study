@@ -31,7 +31,7 @@ export default modelExtend(model, {
         })
         window.localStorage.setItem('user', JSON.stringify(data))
         yield put({
-          type: 'app/updateState',
+          type: 'global/updateState',
           payload: {
             user: data,
             menu: [
@@ -66,7 +66,7 @@ export default modelExtend(model, {
         })
         window.localStorage.setItem('user', JSON.stringify(data))
         yield put({
-          type: 'app/updateState',
+          type: 'global/updateState',
           payload: {
             user: data,
             menu: [

@@ -11,7 +11,9 @@ const FormItem = Form.Item
 
 // if use stateless function,it has a bug 'stateless function don't refs ...,because antd'
 // https://github.com/facebook/react/issues/10831
-class Login extends Component {
+@connect(({ loading, auth }) => ({ loading: loading.effects['auth/login'], auth }))
+@Form.create()
+export default class Login extends Component {
   static propTypes = {
     form: PropTypes.object,
     dispatch: PropTypes.func,
@@ -97,5 +99,3 @@ class Login extends Component {
     )
   }
 }
-
-export default connect(({ loading, auth }) => ({ loading: loading.effects['auth/login'], auth }))(Form.create()(Login))

@@ -27,4 +27,4 @@ const App = ({
   return children
 }
 
-export default withRouter(connect(({ app, loading }) => ({ app, loading }))(App))
+export default withRouter(connect(({ global, loading }) => ({ global, loading }))(App))
